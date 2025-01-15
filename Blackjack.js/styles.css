@@ -1,0 +1,223 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #2d3436;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.game-container {
+    margin-top: 50px;
+    margin-bottom: 150px; /* Add spacing for the footer */
+}
+
+.game-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 130px;
+    background-color: #2d3436;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.money-display {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #00cec9;
+}
+
+.bet-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.bet-button {
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.bet-button:hover {
+    background-color: #a29bfe;
+}
+
+.hand {
+    margin: 20px;
+}
+
+.hand p {
+    visibility: hidden; /* Hide the score */
+    min-height: 1em; /* Reserve space to prevent layout shift */
+}
+
+.hand p.visible {
+    visibility: visible; /* Make the score visible when needed */
+}
+
+
+.buttons {
+    margin: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+button:hover {
+    background-color: #74b9ff;
+}
+
+button:disabled {
+    background-color: #b2bec3;
+    color: #636e72;
+    cursor: not-allowed;
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+button:hover {
+    background-color: #74b9ff;
+}
+
+button:disabled {
+    background-color: #b2bec3;
+    cursor: not-allowed;
+    color: #636e72;
+}
+
+#dealer-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    min-height: 160px; /* Allocate space for cards */
+}
+
+#player-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    min-height: 160px; /* Allocate space for cards */
+}
+
+#dealer-cards div, #player-cards div {
+    background-color: #dfe6e9;
+    color: #2d3436;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.card, .hidden-card {
+    width: 100px;
+    height: auto;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateX(-80%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card.show, .hidden-card.show {
+    transform: translateX(0);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Styling for chips */
+#chip-container {
+    position: absolute;
+    right: 8%;
+    top: 45%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#chip-container img {
+    margin: 10px 0;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+#chip-container img[data-bet="100"] {
+    width: 200px;
+    height: 200px;
+}
+
+#chip-container img[data-bet="500"] {
+    width: 400px;
+    height: 400px;
+}
+
+#chip-container img[data-bet="1000"] {
+    width: 625px;
+    height: 625px;
+}
+
+img.slide-down {
+    transform: translateY(200px);
+    opacity: 0;
+}
+
+img.slide-up {
+    transform: translateY(-200px);
+    opacity: 0;
+}
+
+.money-change {
+    pointer-events: none; /* Prevents interaction */
+    position: fixed;
+    color: green; /* Default color, is overwritten */
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 3s ease, transform 3s ease;
+}
+
+.money-change.fade-out {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.stats-panel {
+    position: absolute;
+    top: 25%;
+    left: 8%;
+    transform: translateY(-50%);
+    background-color: #2d3436;
+    color: white;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.stats-panel h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.stats-panel p {
+    font-size: 14px;
+    margin: 5px 0;
+}

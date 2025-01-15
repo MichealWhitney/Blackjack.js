@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Blackjack</h1>
+
+        <div id="dealer" class="hand">
+            <h2>Dealer's Hand</h2>
+            <div id="dealer-cards"></div>
+            <p id="dealer-score">Score: 0</p>
+        </div>
+
+        <div id="player" class="hand">
+            <h2>Your Hand</h2>
+            <div id="player-cards"></div>
+            <p id="player-score">Score: 0</p>
+        </div>
+
+        <div class="buttons">
+            <button id="hit">Hit</button>
+            <button id="stand">Stand</button>
+            <button id="next-hand">Next Hand</button>
+        </div>
+
+        <div id="chip-container"></div> <!-- container for chips -->
+
+        <h2 id="message"></h2>
+    </div>
+
+    <!-- footer for betting and player balance -->
+    <footer class="game-footer">
+        <div id="player-money" class="money-display">Money: $1000</div>
+        <div id="current-bet" class="money-display">Current Bet: ???</div>
+        <div class="bet-buttons-container">
+            <button class="bet-button" data-bet="100">$100</button>
+            <button class="bet-button" data-bet="500">$500</button>
+            <button class="bet-button" data-bet="1000">$1000</button>
+        </div>
+    </footer>
+
+    <script src="blackjack.js"></script>
+</body>
+<!-- exclude session stats from the main body of the page -->
+<div id="session-stats" class="stats-panel">
+    <h2>Session Stats</h2>
+    <p>Hands Played: <span id="hands-played">0</span></p>
+    <p>Hands Won: <span id="hands-won">0</span></p>
+    <p>Hands Lost: <span id="hands-lost">0</span></p>
+    <p>Net Earnings: <span id="net-earnings">$0</span></p>
+</div>
+</html>
